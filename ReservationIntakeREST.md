@@ -3,7 +3,7 @@
 The reservation intake API allows ORPs to sync reservation data in real time with Ocra. 
 
 `need to get address for staging REST API`
-https://staging.restapi.com/reservations/:organizationId:/:locationId:
+https://staging.restapi.com/transaction
 
 
 Example REST/JSON Request Body: 
