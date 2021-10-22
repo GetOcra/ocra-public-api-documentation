@@ -76,7 +76,7 @@ You may request any/all of the fields from the above request parameters to valid
 
 # Error Response
 
-This is an example Erorr response. 
+This is an example Error response. 
 
 ```js
 
