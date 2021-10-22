@@ -1,6 +1,6 @@
 # Transaction API
 
-The reservation intake API allows ORPs to sync reservation data in real time with Ocra. 
+The Transaction API allows ORPs to sync reservation data in real time with Ocra. 
 
 `need to get address for staging REST API`
 https://staging.restapi.com/transaction
