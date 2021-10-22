@@ -1,4 +1,4 @@
-# Reservation intake API
+# Transaction API
 
 The reservation intake API allows ORPs to sync reservation data in real time with Ocra. 
 
