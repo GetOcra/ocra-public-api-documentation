@@ -3,7 +3,12 @@
 The Transaction API allows ORPs to sync reservation data in real time with Ocra. 
 
 `need to get address for staging REST API`
-https://staging.restapi.com/transaction
+
+Staging Endpoint : 
+
+```
+https://2gkfuqku08.execute-api.us-west-1.amazonaws.com/staging/transaction
+```
 
 
 Example REST/JSON Request Body: 
