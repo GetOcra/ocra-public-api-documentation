@@ -31,7 +31,7 @@ Example REST/JSON Request Body:
         grossRevenue   : 23.01,
         netRevenue     : 20.25,
         productType    : "covered",
-        verticle       : "airport",
+        vertical       : "airport",
         barcode        : "123556469764513"
     }
 ```
