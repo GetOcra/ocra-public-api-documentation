@@ -31,7 +31,7 @@ Example REST/JSON Request Body:
         grossRevenue   : 23.01,
         netRevenue     : 20.25,
         productType    : "covered",
-        categoryType   : "daily",
+        verticle       : "airport",
         barcode        : "123556469764513"
     }
 ```
@@ -51,8 +51,8 @@ Example REST/JSON Request Body:
 |status         |status string  |yes     | ["valid","completed","cancelled","refunded"]|
 |grossRevenue   |float     |yes     | gross revenue in usd without currency mark|
 |netRevenue     |float     |yes     | net revenue in usd without currency mark|
-|productType    |product string |yes     | ["self","valet"]|
-|categoryType   |category string|yes     | ["daily","monthly","airport"]|
+|productType    |product string |yes     | [to be defined]|
+|vertical       |category/verticle string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         |no      | value of barcode used with reservation|
 
 # Response Parameters
