@@ -33,7 +33,6 @@ Example POST JSON Request Body:
 
 ```js
     {
-        apiKey         : "a932b1514d03424da11d3f57cb80240c",
         transactionID  : "4d03",
         transactionDate: "2021-10-05T14:48:00.000Z",
         locationId     : "4557",
