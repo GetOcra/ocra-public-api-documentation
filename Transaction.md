@@ -14,7 +14,22 @@ Production Endpoint :
 coming soon
 ```
 
-Example REST/JSON Request Body: 
+# EXAMPLE Headers for All Requests
+
+|Header|value|description|
+|---|---|---|
+|Authorization|API Key|Your API Key|
+|content-type|application/json|content type of payload and response|
+
+POST Examples:
+
+|type|link|
+|---|---|
+|PHP| coming soon |
+|javascript| coming soon |
+|python| coming soon |
+
+Example POST JSON Request Body: 
 
 ```JSON
     {
@@ -25,7 +40,6 @@ Example REST/JSON Request Body:
         startDate      : "2021-10-05T15:00:00.000Z", 
         endDate        : "2021-10-05T16:00:00.000Z",
         licensePlate   : "AAA-111",
-        status         : "valid",
         grossRevenue   : 23.01,
         netRevenue     : 20.25,
         productType    : "covered",
@@ -35,7 +49,7 @@ Example REST/JSON Request Body:
 ```
 
 
-# Request parameters
+# Request Payload
 
 |param          |type           |required|description|
 |-----          |----           |--------|-----------|
@@ -46,14 +60,13 @@ Example REST/JSON Request Body:
 |startDate      |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from|
 |endDate        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends|
 |licensePlate   |string         |no      | The vehicle license plate|
-|status         |status string  |yes     | ["valid","completed","cancelled","refunded"]|
 |grossRevenue   |float     |yes     | gross revenue in usd without currency mark|
 |netRevenue     |float     |yes     | net revenue in usd without currency mark|
 |productType    |product string |yes     | [to be defined]|
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         |no      | value of barcode used with reservation|
 
-# Response Parameters
+# Example POST Success Response
 
 ```js
 
@@ -65,7 +78,118 @@ Status code 200
 
 ```
 
-# Error Response
+# Example POST Error Response
+
+This is an example Error response. 
+
+```js
+
+Status code 404
+
+{
+  
+}
+
+------------
+
+Status code 401
+
+{
+  
+}
+
+------------
+
+Status code 500
+
+{
+  
+}
+
+
+
+```
+
+GET Examples:
+
+|type|link|
+|---|---|
+|PHP| coming soon |
+|javascript| coming soon |
+|python| coming soon |
+
+
+# Example GET Success Response
+
+```js
+
+Status code 200
+
+  {
+
+  }
+
+```
+
+
+
+# Example GET Error Response
+
+This is an example Error response. 
+
+```js
+
+Status code 404
+
+{
+  
+}
+
+------------
+
+Status code 401
+
+{
+  
+}
+
+------------
+
+Status code 500
+
+{
+  
+}
+
+
+
+```
+
+
+GET Examples:
+
+|type|link|
+|---|---|
+|PHP| coming soon |
+|javascript| coming soon |
+|python| coming soon |
+
+
+# Example GET Success Response
+
+```js
+
+Status code 200
+
+  {
+
+  }
+
+```
+
+
+
+# Example DELETE Error Response
 
 This is an example Error response. 
 
