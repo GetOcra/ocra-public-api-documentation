@@ -2,8 +2,6 @@
 
 The Transaction API allows ORPs to sync reservation data in real time with Ocra. 
 
-`need to get address for staging REST API`
-
 Staging Endpoint : 
 
 ```
