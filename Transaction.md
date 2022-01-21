@@ -21,7 +21,7 @@ coming soon
 |Authorization|API Key|Your API Key|
 |content-type|application/json|content type of payload and response|
 
-# POST Examples:
+### POST Examples:
 
 `/transactions`
 
@@ -31,7 +31,7 @@ coming soon
 |javascript| coming soon |
 |python| coming soon |
 
-# POST Request Payload
+### POST Request Payload
 
 |param          |type           |required|description|
 |-----          |----           |--------|-----------|
@@ -47,7 +47,7 @@ coming soon
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         |no      | value of barcode used with reservation|
 
-# Example Post JSON Request Payload
+### Example Post JSON Request Payload
 
 ```js
     {
@@ -65,10 +65,7 @@ coming soon
     }
 ```
 
-# Example POST Success Response
-
-
-## POST Response Payload
+### Example POST Success Response
 
 |param          |type           |description|
 |-----          |----           |-----------|
@@ -106,9 +103,7 @@ Status code 200
 
 ```
 
-# Example POST Error Response
-
-This is an example Error response. 
+### Example POST Error Response
 
 ```js
 
@@ -149,11 +144,11 @@ GET Examples:
 |python| coming soon |
 
 
-# GET Response Payload
+### GET Response Payload
 
 See POST Response table above for definitions of response fields
 
-# Example GET Success Response
+### Example GET Success Response
 
 ```js
 
@@ -178,9 +173,7 @@ Status code 200
 
 
 
-# Example GET Error Response
-
-This is an example Error response. 
+### Example GET Error Response
 
 ```js
 
@@ -211,7 +204,7 @@ Status code 500
 ```
 
 
-DELETE Examples:
+# DELETE Examples:
 
 `/transactions/:your_transaction_id`
 
@@ -224,11 +217,11 @@ This will not delete the transaction, but instead set its status to cancelled in
 |python| coming soon |
 
 
-# DELETE Response Payload
+### DELETE Response Payload
 
 See POST Response table above for definitions of response fields
 
-# Example DELETE Success Response
+### Example DELETE Success Response
 
 ```js
 
@@ -252,9 +245,7 @@ Status code 200
 ```
 
 
-# Example DELETE Error Response
-
-This is an example Error response. 
+### Example DELETE Error Response 
 
 ```js
 
