@@ -230,7 +230,7 @@ See POST Response table above for definitions of response fields
 Status code 200
 
   {
-        status         : "valid",
+        status         : "cancelled",
         transactionID  : "4d03",
         transactionDate: "2021-10-05T14:48:00.000Z",
         locationId     : "4557",
