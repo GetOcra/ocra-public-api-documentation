@@ -52,7 +52,7 @@ Example REST/JSON Request Body:
 |grossRevenue   |float     |yes     | gross revenue in usd without currency mark|
 |netRevenue     |float     |yes     | net revenue in usd without currency mark|
 |productType    |product string |yes     | [to be defined]|
-|vertical       |category/verticle string|yes     | ["airport","event","transient","monthly"]|
+|vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         |no      | value of barcode used with reservation|
 
 # Response Parameters
