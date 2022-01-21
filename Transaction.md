@@ -31,7 +31,7 @@ POST Examples:
 
 Example POST JSON Request Body: 
 
-```JSON
+```js
     {
         apiKey         : "a932b1514d03424da11d3f57cb80240c",
         transactionID  : "4d03",
