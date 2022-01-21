@@ -21,6 +21,8 @@ coming soon
 |Authorization|API Key|Your API Key|
 |content-type|application/json|content type of payload and response|
 
+# Request/Response Examples
+
 ### POST Examples:
 
 `/transactions`
