@@ -57,7 +57,7 @@ Example REST/JSON Request Body:
 
 # Response Parameters
 
-```JSON
+```js
 
 Status code 200
 
