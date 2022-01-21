@@ -7,7 +7,7 @@ The Transaction API allows ORPs to sync reservation data in real time with Ocra.
 Staging Endpoint : 
 
 ```
-https://2gkfuqku08.execute-api.us-west-1.amazonaws.com/staging/transaction
+coming soon
 ```
 
 Production Endpoint : 
