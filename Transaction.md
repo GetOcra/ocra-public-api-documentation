@@ -21,7 +21,9 @@ coming soon
 |Authorization|API Key|Your API Key|
 |content-type|application/json|content type of payload and response|
 
-POST Examples:
+# POST Examples:
+
+`/transactions`
 
 |type|link|
 |---|---|
@@ -29,7 +31,23 @@ POST Examples:
 |javascript| coming soon |
 |python| coming soon |
 
-Example POST JSON Request Body: 
+# POST Request Payload
+
+|param          |type           |required|description|
+|-----          |----           |--------|-----------|
+|transactionDate|DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the transaction/reservation occurred in your system|
+|transactionID  |string         |yes     | Your systems transaction/reservation ID|
+|locationId     |string         |yes     | The id for the location of the lot or location in your system|
+|startDate      |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from|
+|endDate        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends|
+|licensePlate   |string         |no      | The vehicle license plate|
+|grossRevenue   |float     |yes     | gross revenue in usd without currency mark|
+|netRevenue     |float     |yes     | net revenue in usd without currency mark|
+|productType    |product string |yes     | [to be defined]|
+|vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
+|barcode        |string         |no      | value of barcode used with reservation|
+
+# Example Post JSON Request Payload
 
 ```js
     {
@@ -47,32 +65,43 @@ Example POST JSON Request Body:
     }
 ```
 
+# Example POST Success Response
 
-# POST Request Payload
 
-|param          |type           |required|description|
-|-----          |----           |--------|-----------|
-|apiKey         |string         |yes     | API key provided by Ocra|
+## POST Response Payload
+
+|param          |type           |description|
+|-----          |----           |-----------|
+|status         | status string | ["valid" | "cancelled"] read only|
 |transactionDate|DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the transaction/reservation occurred in your system|
-|transactionID  |string         |yes     | Your systems transaction/reservation ID|
-|locationId     |string         |yes     | The id for the location of the lot or location in your system|
+|transactionID  |string         | Your systems transaction/reservation ID|
+|locationId     |string         | The id for the location of the lot or location in your system|
 |startDate      |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from|
 |endDate        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends|
-|licensePlate   |string         |no      | The vehicle license plate|
-|grossRevenue   |float     |yes     | gross revenue in usd without currency mark|
-|netRevenue     |float     |yes     | net revenue in usd without currency mark|
-|productType    |product string |yes     | [to be defined]|
+|licensePlate   |string         | The vehicle license plate|
+|grossRevenue   |float     | gross revenue in usd without currency mark|
+|netRevenue     |float     | net revenue in usd without currency mark|
+|productType    |product string | [to be defined]|
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
-|barcode        |string         |no      | value of barcode used with reservation|
-
-# Example POST Success Response
+|barcode        |string         | value of barcode used with reservation|
 
 ```js
 
 Status code 200
 
   {
-
+        status         : "valid",
+        transactionID  : "4d03",
+        transactionDate: "2021-10-05T14:48:00.000Z",
+        locationId     : "4557",
+        startDate      : "2021-10-05T15:00:00.000Z", 
+        endDate        : "2021-10-05T16:00:00.000Z",
+        licensePlate   : "AAA-111",
+        grossRevenue   : 23.01,
+        netRevenue     : 20.25,
+        productType    : "covered",
+        vertical       : "airport",
+        barcode        : "123556469764513"
   }
 
 ```
@@ -111,12 +140,18 @@ Status code 500
 
 GET Examples:
 
+`/transactions/:your_transaction_id`
+
 |type|link|
 |---|---|
 |PHP| coming soon |
 |javascript| coming soon |
 |python| coming soon |
 
+
+# GET Response Payload
+
+See POST Response table above for definitions of response fields
 
 # Example GET Success Response
 
@@ -125,7 +160,18 @@ GET Examples:
 Status code 200
 
   {
-
+        status         : "valid",
+        transactionID  : "4d03",
+        transactionDate: "2021-10-05T14:48:00.000Z",
+        locationId     : "4557",
+        startDate      : "2021-10-05T15:00:00.000Z", 
+        endDate        : "2021-10-05T16:00:00.000Z",
+        licensePlate   : "AAA-111",
+        grossRevenue   : 23.01,
+        netRevenue     : 20.25,
+        productType    : "covered",
+        vertical       : "airport",
+        barcode        : "123556469764513"
   }
 
 ```
@@ -165,7 +211,11 @@ Status code 500
 ```
 
 
-GET Examples:
+DELETE Examples:
+
+`/transactions/:your_transaction_id`
+
+This will not delete the transaction, but instead set its status to cancelled in our system.
 
 |type|link|
 |---|---|
@@ -174,18 +224,32 @@ GET Examples:
 |python| coming soon |
 
 
-# Example GET Success Response
+# DELETE Response Payload
+
+See POST Response table above for definitions of response fields
+
+# Example DELETE Success Response
 
 ```js
 
 Status code 200
 
   {
-
+        status         : "valid",
+        transactionID  : "4d03",
+        transactionDate: "2021-10-05T14:48:00.000Z",
+        locationId     : "4557",
+        startDate      : "2021-10-05T15:00:00.000Z", 
+        endDate        : "2021-10-05T16:00:00.000Z",
+        licensePlate   : "AAA-111",
+        grossRevenue   : 23.01,
+        netRevenue     : 20.25,
+        productType    : "covered",
+        vertical       : "airport",
+        barcode        : "123556469764513"
   }
 
 ```
-
 
 
 # Example DELETE Error Response
