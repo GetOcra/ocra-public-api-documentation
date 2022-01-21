@@ -49,7 +49,7 @@ Example POST JSON Request Body:
 ```
 
 
-# Request Payload
+# POST Request Payload
 
 |param          |type           |required|description|
 |-----          |----           |--------|-----------|
