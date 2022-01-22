@@ -14,14 +14,14 @@ Production Endpoint :
 coming soon
 ```
 
-# EXAMPLE Headers for All Requests
+## EXAMPLE Headers for All Requests
 
 |Header|value|description|
 |---|---|---|
 |Authorization|API Key|Your API Key|
 |content-type|application/json|content type of payload and response|
 
-# Request/Response Examples
+## Request/Response Examples
 
 |Method|description|
 |---|---|
