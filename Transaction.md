@@ -23,7 +23,13 @@ coming soon
 
 # Request/Response Examples
 
-### POST Examples:
+|Method|description|
+|---|---|
+|[POST](#post-examples)|upsert transaction into Ocra system, this will set the `.status` to `valid`|
+|[GET](#get-examples)|fetch transaction from Ocra system|
+|[DELETE](#delete-examples)|set transaction `.status` to `cancelled`|
+
+# POST Examples:
 
 `/transactions`
 
@@ -135,7 +141,7 @@ Status code 500
 
 ```
 
-GET Examples:
+# GET Examples:
 
 `/transactions/:your_transaction_id`
 
