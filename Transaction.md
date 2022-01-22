@@ -35,9 +35,9 @@ coming soon
 
 |type|link|
 |---|---|
-|javascript| [examples/POST/basic.js](./examples/POST/basic.js) |
-|python| [examples/POST/basic.py](./examples/POST/basic.py) |
-|PHP| [examples/POST/basic.php](./examples/POST/basic.php) |
+|javascript| [examples/POST/transactions.js](./examples/POST/transactions.js) |
+|python| [examples/POST/transactions.py](./examples/POST/transactions.py) |
+|PHP| [examples/POST/transactions.php](./examples/POST/transactions.php) |
 
 ### POST Request Payload
 
@@ -147,9 +147,9 @@ Status code 500
 
 |type|link|
 |---|---|
-|javascript| [examples/GET/basic.js](./examples/GET/basic.js) |
-|python| [examples/GET/basic.py](./examples/GET/basic.py) |
-|PHP| [examples/GET/basic.php](./examples/GET/basic.php) |
+|javascript| [examples/GET/transactions.js](./examples/GET/transactions.js) |
+|python| [examples/GET/transactions.py](./examples/GET/transactions.py) |
+|PHP| [examples/GET/transactions.php](./examples/GET/transactions.php) |
 
 
 ### GET Response Payload
@@ -218,9 +218,9 @@ Status code 500
 
 This will not delete the transaction, but instead set its status to cancelled in our system.
 
-|javascript| [examples/DELETE/basic.js](./examples/DELETE/basic.js) |
-|python| [examples/DELETE/basic.py](./examples/DELETE/basic.py) |
-|PHP| [examples/DELETE/basic.php](./examples/DELETE/basic.php) |
+|javascript| [examples/DELETE/transactions.js](./examples/DELETE/transactions.js) |
+|python| [examples/DELETE/transactions.py](./examples/DELETE/transactions.py) |
+|PHP| [examples/DELETE/transactions.php](./examples/DELETE/transactions.php) |
 
 
 ### DELETE Response Payload
