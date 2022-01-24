@@ -5,7 +5,6 @@
         'content-type: application/json',
         'Authorization: YOUR_API_KEY_HERE',
     );
-    $METHOD = 'DELETE';
         
         
     $request = curl_init();
