@@ -77,7 +77,7 @@ coming soon
 
 |param          |type           |description|
 |-----          |----           |-----------|
-|status         | status string | ["valid" | "cancelled"] read only|
+|status         | status string | ["valid", "cancelled"] read only|
 |transactionDate|DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the transaction/reservation occurred in your system|
 |transactionID  |string         | Your systems transaction/reservation ID|
 |locationId     |string         | The id for the location of the lot or location in your system|
