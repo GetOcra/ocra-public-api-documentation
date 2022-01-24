@@ -5,13 +5,14 @@
         'content-type: application/json',
         'Authorization: YOUR_API_KEY_HERE',
     );
-    $METHOD = 'GET';
         
         
     $request = curl_init();
     curl_setopt($request, CURLOPT_URL, "{$BASE}/transaction/{$TRANSACTION_ID}");
-    curl_setopt($request, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($request, CURLOPT_HTTPHEADER, $HEADERS);
+    curl_setopt($request, CURLOPT_HTTPGET, true);
+    curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+    
 
     //FOR DEBUG ONLY
     curl_setopt($request, CURLOPT_SSL_VERIFYHOST, false);
