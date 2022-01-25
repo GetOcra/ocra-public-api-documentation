@@ -22,4 +22,12 @@
     curl_close($request);
     
     var_dump($response);   
+
+    /*
+
+    for response payload see 
+
+    https://github.com/GetOcra/ocra-public-api-documentation/blob/main/Transaction.md#example-delete-success-response
+
+    */
 ?>
