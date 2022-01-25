@@ -115,29 +115,15 @@ Status code 200
 
 ```js
 
-Status code 404
-
-{
-  
-}
+Status code 403
 
 ------------
 
 Status code 401
 
-{
-  
-}
-
 ------------
 
 Status code 500
-
-{
-  
-}
-
-
 
 ```
 
@@ -185,27 +171,15 @@ Status code 200
 
 ```js
 
-Status code 404
-
-{
-  
-}
+Status code 403
 
 ------------
 
 Status code 401
 
-{
-  
-}
-
 ------------
 
 Status code 500
-
-{
-  
-}
 
 ```
 
@@ -253,26 +227,14 @@ Status code 200
 
 ```js
 
-Status code 404
-
-{
-  
-}
+Status code 403
 
 ------------
 
 Status code 401
 
-{
-  
-}
-
 ------------
 
 Status code 500
-
-{
-  
-}
 
 ```
