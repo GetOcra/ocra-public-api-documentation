@@ -35,6 +35,10 @@ const response = await fetch(
     }
 );
 
+//DEBUG ONLY
+console.log(response);
+console.log(await response.json());
+
 /*
 
 for response payload see 
