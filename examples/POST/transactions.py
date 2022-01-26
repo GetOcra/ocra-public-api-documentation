@@ -15,7 +15,7 @@ response = requests.delete(
         {
             transactionID  : TRANSACTION_ID,
             transactionDate: '2021-10-05T14:48:00.000Z',
-            locationId     : '4557',
+            locationID     : '4557',
             startDate      : '2021-10-05T15:00:00.000Z', 
             endDate        : '2021-10-05T16:00:00.000Z',
             licensePlate   : 'AAA-111',

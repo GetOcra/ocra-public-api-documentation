@@ -45,7 +45,7 @@ coming soon
 |-----          |----           |--------|-----------|
 |transactionDate|DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the transaction/reservation occurred in your system|
 |transactionID  |string         |yes     | Your systems transaction/reservation ID|
-|locationId     |string         |yes     | The id for the location of the lot or location in your system|
+|locationID     |string         |yes     | The id for the location of the lot or location in your system|
 |startDate      |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from|
 |endDate        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends|
 |licensePlate   |string         |no      | The vehicle license plate|
@@ -61,7 +61,7 @@ coming soon
     {
         transactionID  : "4d03",
         transactionDate: "2021-10-05T14:48:00.000Z",
-        locationId     : "4557",
+        locationID     : "4557",
         startDate      : "2021-10-05T15:00:00.000Z", 
         endDate        : "2021-10-05T16:00:00.000Z",
         licensePlate   : "AAA-111",
@@ -80,7 +80,7 @@ coming soon
 |status         | status string | ["valid", "cancelled"] read only|
 |transactionDate|DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the transaction/reservation occurred in your system|
 |transactionID  |string         | Your systems transaction/reservation ID|
-|locationId     |string         | The id for the location of the lot or location in your system|
+|locationID     |string         | The id for the location of the lot or location in your system|
 |startDate      |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from|
 |endDate        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends|
 |licensePlate   |string         | The vehicle license plate|
@@ -98,7 +98,7 @@ Status code 200
         status         : "valid",
         transactionID  : "4d03",
         transactionDate: "2021-10-05T14:48:00.000Z",
-        locationId     : "4557",
+        locationID     : "4557",
         startDate      : "2021-10-05T15:00:00.000Z", 
         endDate        : "2021-10-05T16:00:00.000Z",
         licensePlate   : "AAA-111",
@@ -152,7 +152,7 @@ Status code 200
         status         : "valid",
         transactionID  : "4d03",
         transactionDate: "2021-10-05T14:48:00.000Z",
-        locationId     : "4557",
+        locationID     : "4557",
         startDate      : "2021-10-05T15:00:00.000Z", 
         endDate        : "2021-10-05T16:00:00.000Z",
         licensePlate   : "AAA-111",
@@ -209,7 +209,7 @@ Status code 200
         status         : "cancelled",
         transactionID  : "4d03",
         transactionDate: "2021-10-05T14:48:00.000Z",
-        locationId     : "4557",
+        locationID     : "4557",
         startDate      : "2021-10-05T15:00:00.000Z", 
         endDate        : "2021-10-05T16:00:00.000Z",
         licensePlate   : "AAA-111",
