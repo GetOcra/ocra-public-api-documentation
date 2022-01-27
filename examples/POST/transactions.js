@@ -14,7 +14,7 @@ const HEADERS = {
 const METHOD='POST';
 
 const response = await fetch(
-    `${BASE}/transaction`, 
+    `${BASE}/transactions`, 
     {
         headers: HEADERS,
         method: METHOD,

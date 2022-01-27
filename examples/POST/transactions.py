@@ -9,7 +9,7 @@ HEADERS = {
 }
 
 response = requests.post(
-    f'{BASE}/transaction', 
+    f'{BASE}/transactions', 
     headers=HEADERS,
     data=json.dumps(
         {
