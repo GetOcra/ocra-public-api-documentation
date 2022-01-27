@@ -23,7 +23,7 @@
     $request = curl_init();
     curl_setopt($request, CURLOPT_URL, "{$BASE}/transactions");
     curl_setopt($request, CURLOPT_HTTPHEADER, $HEADERS);
-    curl_setopt($request, CURLOPT_POSTFIELDS, $BODY);
+    curl_setopt($request, CURLOPT_POSTFIELDS, json_encode($BODY));
     curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
 
     //FOR DEBUG ONLY
