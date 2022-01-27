@@ -8,7 +8,7 @@ HEADERS = {
 }
 
 response = requests.get(
-    f'{BASE}/transaction/{TRANSACTION_ID}', 
+    f'{BASE}/transactions/{TRANSACTION_ID}', 
     headers=HEADERS
 )
 
