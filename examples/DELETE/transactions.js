@@ -13,7 +13,7 @@ const HEADERS = {
 const METHOD='DELETE';
 
 const response = await fetch(
-    `${BASE}/transaction/${TRANSACTION_ID}`, 
+    `${BASE}/transactions/${TRANSACTION_ID}`, 
     {
         headers: HEADERS,
         method: METHOD,

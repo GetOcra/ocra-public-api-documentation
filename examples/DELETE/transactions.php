@@ -8,7 +8,7 @@
         
         
     $request = curl_init();
-    curl_setopt($request, CURLOPT_URL, "{$BASE}/transaction/{$TRANSACTION_ID}");
+    curl_setopt($request, CURLOPT_URL, "{$BASE}/transactions/{$TRANSACTION_ID}");
     curl_setopt($request, CURLOPT_HTTPHEADER, $HEADERS);
     curl_setopt($request, CURLOPT_CUSTOMREQUEST, 'DELETE');
     curl_setopt($request, CURLOPT_RETURNTRANSFER, true);

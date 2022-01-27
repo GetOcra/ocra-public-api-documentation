@@ -8,7 +8,7 @@ HEADERS = {
 }
 
 response = requests.delete(
-    f'{BASE}/transaction/{TRANSACTION_ID}', 
+    f'{BASE}/transactions/{TRANSACTION_ID}', 
     headers=HEADERS
 )
 
