@@ -4,6 +4,7 @@ if running on node,
 import fetch from 'node-fetch';
 */
 
+
 const TRANSACTION_ID='4d03';
 const BASE = 'https://api.stage.getocra.com';
 const HEADERS = {
@@ -13,7 +14,7 @@ const HEADERS = {
 const METHOD='POST';
 
 const response = await fetch(
-    `${BASE}/transaction/${TRANSACTION_ID}`, 
+    `${BASE}/transaction`, 
     {
         headers: HEADERS,
         method: METHOD,

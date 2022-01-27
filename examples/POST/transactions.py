@@ -8,8 +8,8 @@ HEADERS = {
     'Authorization': 'YOUR_API_KEY_HERE'
 }
 
-response = requests.delete(
-    f'{BASE}/transaction/{TRANSACTION_ID}', 
+response = requests.post(
+    f'{BASE}/transaction', 
     headers=HEADERS,
     data=json.dumps(
         {
