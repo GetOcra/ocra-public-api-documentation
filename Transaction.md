@@ -52,7 +52,7 @@ coming soon
 |licensePlate   |string         |no      | The vehicle license plate|
 |grossRevenue   |float     |yes     | gross revenue in usd without currency mark|
 |netRevenue     |float     |yes     | net revenue in usd without currency mark|
-|productType    |product string |yes     | [to be defined]|
+|productType    |product string |yes     | ["self_uncovered", "self_covered", "self_rooftop", "self_indoor", "valet_uncovered", "valet_covered", "valet_indoor"]|
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         |no      | value of barcode used with reservation|
 
@@ -87,7 +87,7 @@ coming soon
 |licensePlate   |string         | The vehicle license plate|
 |grossRevenue   |float     | gross revenue in usd without currency mark|
 |netRevenue     |float     | net revenue in usd without currency mark|
-|productType    |product string | [to be defined]|
+|productType    |product string | ["self_uncovered", "self_covered", "self_rooftop", "self_indoor", "valet_uncovered", "valet_covered", "valet_indoor"]|
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         | value of barcode used with reservation|
 
