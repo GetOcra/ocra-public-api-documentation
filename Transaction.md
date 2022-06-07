@@ -42,7 +42,7 @@ coming soon
 ### POST Request Payload
 
 |param          |type           |required|description|create-only|
-|-----          |----           |--------|-----------|
+|-----          |----           |--------|-----------|-----------|
 |status         | status string | ["valid", "cancelled"] READ ONLY, updates to valid on any POST request. To set to cancelled, call the [DELETE method](#delete-examples)|
 |transactionDate|DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the transaction/reservation occurred in your system|no|
 |transactionID  |string         |yes     | Your systems transaction/reservation ID|yes|
