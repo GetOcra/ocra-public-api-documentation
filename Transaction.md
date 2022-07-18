@@ -11,7 +11,7 @@ https://api.stage.getocra.com
 Production Endpoint : 
 
 ```
-https://api.getocra.com/transactions
+https://api.getocra.com
 ```
 
 ## EXAMPLE Headers for All Requests
