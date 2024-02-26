@@ -52,7 +52,7 @@ https://api.getocra.com
 |licensePlate   |string         |no      | The vehicle license plate|no|
 |grossRevenue   |float     |yes     | gross revenue in usd without currency mark|no|
 |netRevenue     |float     |yes     | net revenue in usd without currency mark|no|
-|productType    |product string |yes     | ["self_uncovered", "self_covered", "self_rooftop", "self_indoor", "valet_uncovered", "valet_covered", "valet_indoor", "garage_ground_floor"]|yes|
+|productType    |product string |yes     | ['self_uncovered', 'self_covered', 'self_rooftop', 'self_indoor', 'valet_uncovered', 'valet_covered', 'valet_indoor', 'garage_ground_floor', 'self_curbside', 'valet_rooftop', 'valet_curbside', 'self_uncovered_oversized', 'self_covered_oversized', 'self_indoor_oversized', 'self_rooftop_oversized', 'self_curbside_oversized', 'valet_uncovered_oversized', 'valet_covered_oversized', 'valet_indoor_oversized', 'valet_rooftop_oversized', 'valet_curbside_oversized']|yes|
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|yes|
 |barcode        |string         |no      | value of barcode used with reservation|no|
 
@@ -87,7 +87,7 @@ https://api.getocra.com
 |licensePlate   |string         | The vehicle license plate|
 |grossRevenue   |float     | gross revenue in usd without currency mark|
 |netRevenue     |float     | net revenue in usd without currency mark|
-|productType    |product string | ["self_uncovered", "self_covered", "self_rooftop", "self_indoor", "valet_uncovered", "valet_covered", "valet_indoor", "garage_ground_floor"]|
+|productType    |product string | ['self_uncovered', 'self_covered', 'self_rooftop', 'self_indoor', 'valet_uncovered', 'valet_covered', 'valet_indoor', 'garage_ground_floor', 'self_curbside', 'valet_rooftop', 'valet_curbside', 'self_uncovered_oversized', 'self_covered_oversized', 'self_indoor_oversized', 'self_rooftop_oversized', 'self_curbside_oversized', 'valet_uncovered_oversized', 'valet_covered_oversized', 'valet_indoor_oversized', 'valet_rooftop_oversized', 'valet_curbside_oversized']|
 |vertical       |category/vertical string|yes     | ["airport","event","transient","monthly"]|
 |barcode        |string         | value of barcode used with reservation|
 
