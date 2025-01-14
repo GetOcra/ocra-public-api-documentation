@@ -1,6 +1,6 @@
 # Transaction API
 
-The Transaction API allows ORPs to sync reservation data in real time with Ocra. 
+The Transaction API allows Online Reservation Partners to sync reservation data in real time with Ocra. 
 
 Staging Endpoint : :
 
