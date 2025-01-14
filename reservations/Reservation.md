@@ -1,0 +1,171 @@
+# Reservations API
+
+The Reservations API allows ORPs to sync reservation data in real time with Ocra. 
+
+Staging URL:
+```
+https://partners.stage.getocra.com
+```
+
+Production URL:
+```
+https://partners.getocra.com
+```
+
+## Headers for All Requests
+|Header|value|description|
+|---|---|---|
+|x-api-key|API Key|Your API Key|
+|content-type|application/json|content type of payload and response|
+
+## Request/Response Overview
+|Method| description                                                                |
+|---|----------------------------------------------------------------------------|
+|POST| upsert reservation into Ocra system, this will set the `status` to `valid` |
+|DELETE| set reservation `status` to `cancelled`                                    |
+
+# POST Reservation:
+`POST /v1/reservations`
+
+Create a reservation in our system 
+
+### POST Request Payload
+
+| param            |type           |required| description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |create-only|
+|------------------|----           |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| sourceLocationID |string         |yes     | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |yes|
+| reservationID    |string         |yes     | Your systems reservation ID                                                                                                                                                                                                                                                                                                                                                                                                                                                   |yes| 
+| reservationTime  |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation occurred in your system                                                                                                                                                                                                                                                                                                                                                                                                                      |no|| sourceLocationID |string         |yes     | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |yes|
+| startTime        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from                                                                                                                                                                                                                                                                                                                                                                                                                                  |no|
+| endTime          |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends                                                                                                                                                                                                                                                                                                                                                                                                                                         |no|
+| licensePlate     |string         |no      | The vehicle license plate                                                                                                                                                                                                                                                                                                                                                                                                                                                     |no|
+| grossRevenue     |float     |yes     | gross revenue in usd without currency mark                                                                                                                                                                                                                                                                                                                                                                                                                                    |no|
+| netRevenue       |float     |yes     | net revenue in usd without currency mark                                                                                                                                                                                                                                                                                                                                                                                                                                      |no|
+| productType      |product string |yes     | ['self_uncovered', 'self_covered', 'self_rooftop', 'self_indoor', 'valet_uncovered', 'valet_covered', 'valet_indoor', 'garage_ground_floor', 'self_curbside', 'valet_rooftop', 'valet_curbside', 'self_uncovered_oversized', 'self_covered_oversized', 'self_indoor_oversized', 'self_rooftop_oversized', 'self_curbside_oversized', 'valet_uncovered_oversized', 'valet_covered_oversized', 'valet_indoor_oversized', 'valet_rooftop_oversized', 'valet_curbside_oversized'] |yes|
+| vertical         |category/vertical string|yes     | ["airport","event","transient","monthly"]                                                                                                                                                                                                                                                                                                                                                                                                                                     |yes|
+| barcode          |string         |no      | value of barcode used with reservation                                                                                                                                                                                                                                                                                                                                                                                                                                        |no|
+
+### Example Post JSON Request Payload
+
+```js
+    {
+        sourceLocationID : "4557",
+        reservationID    : "4d03",
+        reservationTime  : "2021-10-05T14:48:00.000Z",
+        startTime        : "2021-10-05T15:00:00.000Z", 
+        endTime          : "2021-10-05T16:00:00.000Z",
+        licensePlate     : "AAA-111",
+        grossRevenue     : 23.01,
+        netRevenue       : 20.25,
+        productType      : "covered",
+        vertical         : "airport",
+        barcode          : "123556469764513"
+    }
+```
+
+### Example POST Success Response
+
+| param            | type                                                                                                                  | description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|------------------|-----------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| sourceLocationID | string                                                                                                                | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| status           | status string                                                                                                         | ["valid", "cancelled"] read only                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| reservationTime  | DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) | ISO8601 DateTime the transaction occurred in your system                                                                                                                                                                                                                                                                                                                                                                                                                      | ISO8601 DateTime the reservation occurred in your system|
+| reservationID    | string                                                                                                                | Your systems reservation ID                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+  | startTime        | DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) | yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | ISO8601 DateTime the reservation starts from|
+  | endTime          | DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) | yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | ISO8601 DateTime the reservation ends|
+  | licensePlate     | string                                                                                                                | The vehicle license plate                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+  | grossRevenue     | float                                                                                                                 | gross revenue in usd without currency mark                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| netRevenue       | float                                                                                                                 | net revenue in usd without currency mark                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| productType      | product string                                                                                                        | ['self_uncovered', 'self_covered', 'self_rooftop', 'self_indoor', 'valet_uncovered', 'valet_covered', 'valet_indoor', 'garage_ground_floor', 'self_curbside', 'valet_rooftop', 'valet_curbside', 'self_uncovered_oversized', 'self_covered_oversized', 'self_indoor_oversized', 'self_rooftop_oversized', 'self_curbside_oversized', 'valet_uncovered_oversized', 'valet_covered_oversized', 'valet_indoor_oversized', 'valet_rooftop_oversized', 'valet_curbside_oversized'] |
+| vertical         | category/vertical string                                                                                              | yes                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | ["airport","event","transient","monthly"]|
+| barcode          | string                                                                                                                | value of barcode used with reservation                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+  | barcode          | string                                                                                                                | value of barcode used with reservation                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| updatedTime      | DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) | ISO8601 DateTime the transaction was last updated in our system                                                                                                                                                                                                                                                                                                                                                                                                               | ISO8601 DateTime the reservation occurred in your system|
+```js
+
+Status code 200
+
+  {
+        sourceLocationID : "4557",
+        status           : "valid",
+        reservationID    : "4d03",
+        reservationTime  : "2021-10-05T14:48:00.000Z",
+        startTime        : "2021-10-05T15:00:00.000Z", 
+        endTime          : "2021-10-05T16:00:00.000Z",
+        licensePlate     : "AAA-111",
+        grossRevenue     : 23.01,
+        netRevenue       : 20.25,
+        productType      : "covered",
+        vertical         : "airport",
+        barcode          : "123556469764513",
+        updatedTime      : "2021-10-05T15:43:11.024Z"
+  }
+
+```
+
+### Example POST Error Response
+
+```js
+
+Status code 403
+
+------------
+
+Status code 401
+
+------------
+
+Status code 500
+
+```
+
+# DELETE Reservation:
+
+`DELETE /v1/reservations/:your_reservation_id`
+
+This will not delete the reservation, but instead set its status to `cancelled` in our system.
+
+### DELETE Response Payload
+
+See POST Response table above for definitions of response fields
+
+### Example DELETE Success Response
+
+```js
+
+Status code 200
+
+  {
+        sourceLocationID : "4557",
+        status           : "cancelled",
+        reservationID    : "4d03",
+        reservationTime  : "2021-10-05T14:48:00.000Z",
+        startTime        : "2021-10-05T15:00:00.000Z", 
+        endTime          : "2021-10-05T16:00:00.000Z",
+        licensePlate     : "AAA-111",
+        grossRevenue     : 23.01,
+        netRevenue       : 20.25,
+        productType      : "covered",
+        vertical         : "airport",
+        barcode          : "123556469764513"
+        updatedTime      : "2021-10-05T15:43:11.024Z"
+  }
+
+```
+
+
+### Example DELETE Error Response 
+
+```js
+
+Status code 403
+
+------------
+
+Status code 401
+
+------------
+
+Status code 500
+
+```
