@@ -1,6 +1,6 @@
 # Ocra Public API Documentation:
 
-Public api documentation for integrating with ocra
+Public api documentation for integrating with Ocra
 
 |API|documentation|Description|
 |---|-------------|-----------|
