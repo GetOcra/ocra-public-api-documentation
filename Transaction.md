@@ -2,7 +2,7 @@
 
 The Transaction API allows Online Reservation Partners to sync reservation data in real time with Ocra. 
 
-Staging Endpoint : :
+Staging Endpoint : 
 
 ```
 https://api.stage.getocra.com
