@@ -34,9 +34,9 @@ Create a reservation in our system
 
 | param            |type           |required| description                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |create-only|
 |------------------|----           |--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|
-| sourceLocationID |string         |yes     | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |yes|
+| locationID |string         |yes     | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |yes|
 | reservationID    |string         |yes     | Your systems reservation ID                                                                                                                                                                                                                                                                                                                                                                                                                                                   |yes|
-| reservationTime  |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation occurred in your system                                                                                                                                                                                                                                                                                                                                                                                                                      |no|| sourceLocationID |string         |yes     | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |yes|
+| reservationTime  |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation occurred in your system                                                                                                                                                                                                                                                                                                                                                                                                                      |no|| locationID |string         |yes     | The id for the location of the lot or location in your system                                                                                                                                                                                                                                                                                                                                                                                                                 |yes|
 | startTime        |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation starts from                                                                                                                                                                                                                                                                                                                                                                                                                                  |no|
 | endTime          |DateTime [ISO8601](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)|yes     | ISO8601 DateTime the reservation ends                                                                                                                                                                                                                                                                                                                                                                                                                                         |no|
 | licensePlate     |string         |no      | The vehicle license plate                                                                                                                                                                                                                                                                                                                                                                                                                                                     |no|
@@ -50,7 +50,7 @@ Create a reservation in our system
 
 ```js
     {
-        sourceLocationID : "4557",
+        locationID : "4557",
         reservationID    : "4d03",
         reservationTime  : "2021-10-05T14:48:00.000Z",
         startTime        : "2021-10-05T15:00:00.000Z",
@@ -71,7 +71,7 @@ Create a reservation in our system
 Status code 200
 
   {
-        sourceLocationID : "4557",
+        locationID : "4557",
         status           : "valid",
         reservationID    : "4d03",
         reservationTime  : "2021-10-05T14:48:00.000Z",
@@ -101,7 +101,7 @@ This will not delete the reservation, but instead set its status to `cancelled` 
 Status code 200
 
   {
-        sourceLocationID : "4557",
+        locationID : "4557",
         status           : "cancelled",
         reservationID    : "4d03",
         reservationTime  : "2021-10-05T14:48:00.000Z",
@@ -127,7 +127,7 @@ Fetch reservation(s)
 
 | **Parameter**      | **Type**            | **Description**                                                                                                                          | **Required** |
 |--------------------|---------------------|------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| ocra_location_id   | alphanumerical      | Location identifier in Ocra's system                                                                                                     | yes          |
+| location_id   | alphanumerical      | Location identifier in Ocra's system                                                                                                     | yes          |
 | license_plate      | alphanumerical      | License plate                                                                                                                            | no           |
 | reservation_id     | alphanumerical      | Unique reservation ID, can be matched with starting characters                                                                           | no           |
 | product_type       | text                | Product types: `self_uncovered`, `self_covered`, `self_rooftop`, `self_indoor`, `valet_uncovered`, `valet_covered`, `valet_indoor`, etc. | no           |
