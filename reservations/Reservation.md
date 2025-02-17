@@ -127,7 +127,7 @@ Fetch reservation(s)
 
 | **Parameter**      | **Type**            | **Description**                                                                                                                          | **Required** |
 |--------------------|---------------------|------------------------------------------------------------------------------------------------------------------------------------------|--------------|
-| ocra_location_id   | alphanumerical      | Location identifier in Ocra's system                                                                                                     | yes          |
+| location_id   | alphanumerical      | Location identifier in Ocra's system                                                                                                     | yes          |
 | license_plate      | alphanumerical      | License plate                                                                                                                            | no           |
 | reservation_id     | alphanumerical      | Unique reservation ID, can be matched with starting characters                                                                           | no           |
 | product_type       | text                | Product types: `self_uncovered`, `self_covered`, `self_rooftop`, `self_indoor`, `valet_uncovered`, `valet_covered`, `valet_indoor`, etc. | no           |
